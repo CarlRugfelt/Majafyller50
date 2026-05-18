@@ -39,7 +39,6 @@
   .sec-label { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#C8922A; margin-bottom:10px; }
   .sec-title { font-family:'Playfair Display',serif; font-size:40px; font-style:italic; color:#2C2A22; margin-bottom:36px; line-height:1.15; }
 
-  /* TEMA */
   .theme-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:28px; }
   .theme-card { background:#fff; border:1px solid #E2D9C4; padding:26px 20px; transition:border-color .25s; }
   .theme-card:hover { border-color:#7A9E5F; }
@@ -64,12 +63,10 @@
   /* BILDGALLERI */
   .gallery-label { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#C8922A; margin-bottom:10px; margin-top:48px; }
   .gallery-title { font-family:'Playfair Display',serif; font-size:32px; font-style:italic; color:#2C2A22; margin-bottom:24px; }
-  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-  .gallery-item { aspect-ratio:1; background:#EDF3E8; border:1px solid #C0D4AA; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; cursor:pointer; transition:border-color .25s; position:relative; overflow:hidden; }
-  .gallery-item:first-child { grid-column:span 2; aspect-ratio:2/1; }
-  .gallery-item:hover { border-color:#7A9E5F; }
-  .gallery-icon { font-size:28px; opacity:.5; }
-  .gallery-hint { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#7A9E5F; opacity:.7; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .gallery-grid img { width:100%; aspect-ratio:1; object-fit:cover; border:1px solid #E2D9C4; transition:opacity .25s; }
+  .gallery-grid img:first-child { grid-column:span 2; aspect-ratio:2/1; }
+  .gallery-grid img:hover { opacity:.9; }
 
   /* KVÄLLEN */
   .kvall-box { border:1px solid #E2D9C4; padding:36px 32px; background:#fff; margin-bottom:24px; }
@@ -109,7 +106,7 @@
     .osa-wrap { padding:30px 18px; }
     .nav-btn { padding:12px 10px; font-size:10px; letter-spacing:2px; }
     .gallery-grid { grid-template-columns:repeat(2,1fr); }
-    .gallery-item:first-child { grid-column:span 2; }
+    .gallery-grid img:first-child { grid-column:span 2; }
     .kvall-box { padding:24px 18px; }
   }
 </style>
@@ -127,7 +124,7 @@
     <div class="hero-details-row">
       <div class="hero-detail"><strong>13 Juni</strong>Lördag 2026</div>
       <div class="hero-detail"><strong>Kl. 18.00</strong>Solbacken</div>
-      <div class="hero-detail"><strong>Enebacksv. 18</strong>Välkommen!</div>
+      <div class="hero-detail"><strong>Enebachsv. 18</strong>Välkommen!</div>
     </div>
     <div class="deco-line"><span></span><em>Sommarcocktails &amp; Festligheter</em><span></span></div>
   </div>
@@ -158,13 +155,12 @@
     <p class="dress-sub">Gärna glada sommarfärger — florals och linne välkomnas!</p>
   </div>
 
-  <!-- TIDPLAN -->
   <p class="sec-label">Kvällens upplägg</p>
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-dot"></div>
       <p class="tl-time">Kl. 18.00</p>
-      <p class="tl-title">Välkomsdrink</p>
+      <p class="tl-title">Välkomstdrink</p>
       <p class="tl-desc">Gästerna anländer och möts av sommarcocktails i atriumgården</p>
     </div>
     <div class="tl-item">
@@ -194,29 +190,22 @@
   </div>
 
   <!-- BILDGALLERI -->
-  <p class="gallery-label">Maja genom åren</p>
+  <p class="gallery-label" style="margin-top:48px">Maja genom åren</p>
   <p class="gallery-title">Femtio år av ögonblick</p>
   <div class="gallery-grid">
-    <div class="gallery-item">
-      <span class="gallery-icon">🌿</span>
-      <span class="gallery-hint">Lägg till foto</span>
-    </div>
-    <div class="gallery-item">
-      <span class="gallery-icon">🌿</span>
-      <span class="gallery-hint">Lägg till foto</span>
-    </div>
-    <div class="gallery-item">
-      <span class="gallery-icon">🌿</span>
-      <span class="gallery-hint">Lägg till foto</span>
-    </div>
-    <div class="gallery-item">
-      <span class="gallery-icon">🌿</span>
-      <span class="gallery-hint">Lägg till foto</span>
-    </div>
-    <div class="gallery-item">
-      <span class="gallery-icon">🌿</span>
-      <span class="gallery-hint">Lägg till foto</span>
-    </div>
+    <img src="141F7143-841A-45E0-9CC9-6FC5786A28C6.JPG" alt="Maja">
+    <img src="20180326_113248_IMG_2197.JPG" alt="Maja">
+    <img src="6482E75B-D826-4A5F-86EF-2895AEFE25D7.JPG" alt="Maja">
+    <img src="IMG-20240531-WA0003.jpg" alt="Maja">
+    <img src="IMG-20241206-WA0000.jpg" alt="Maja">
+    <img src="IMG-20250218-WA0000.jpg" alt="Maja">
+    <img src="IMG-20250602-WA0000.jpg" alt="Maja">
+    <img src="IMG-20250606-WA0001.jpg" alt="Maja">
+    <img src="IMG-20250607-WA0002.jpg" alt="Maja">
+    <img src="IMG-20250618-WA0002.jpg" alt="Maja">
+    <img src="IMG-20250705-WA0005.jpg" alt="Maja">
+    <img src="IMG-20260123-WA0000.jpg" alt="Maja">
+    <img src="IMG-20260408-WA0001.jpg" alt="Maja">
   </div>
 </section>
 
@@ -224,12 +213,9 @@
 <section class="section" id="kvallen">
   <p class="sec-label">Om kvällen</p>
   <h2 class="sec-title">En kväll för Maja</h2>
-
-  <!-- ERSÄTT TEXTEN NEDAN MED DIN EGEN TEXT OM MAJA OCH KVÄLLEN -->
   <div class="kvall-box">
-    <p class="kvall-placeholder">Skriv något personligt om Maja och kvällen här — vem hon är, vad som gör henne speciell, och vad som väntar gästerna under kvällen. Den här texten syns när gästerna klickar på "Kvällen".</p>
+    <p class="kvall-placeholder">Skriv något personligt om Maja och kvällen här — vem hon är, vad som gör henne speciell, och vad som väntar gästerna under kvällen.</p>
   </div>
-
   <div class="atrium-box">
     <p class="atrium-title">Atriumgården — kvällens hjärta</p>
     <p class="atrium-desc">Alla rum vätter ut mot gården. Här finns självservicesbaren, fotohörnan med polaroidkamera och en speaker's corner för tal och skålar.</p>
@@ -247,36 +233,12 @@
   <h2 class="sec-title">Vad ska man ge den som har allt?</h2>
   <p class="present-intro">Maja behöver egentligen ingenting — men uppskattar allt som kommer från hjärtat. Här är några idéer om du letar efter inspiration, stort som smått.</p>
   <div class="present-grid">
-    <div class="present-card">
-      <span class="present-emoji">🌿</span>
-      <p class="present-name">En dag för Maja</p>
-      <p class="present-desc">Boka en aktivitet hon älskar — spa, konsert, matlagningskurs eller en promenad med picknick.</p>
-    </div>
-    <div class="present-card">
-      <span class="present-emoji">📚</span>
-      <p class="present-name">Böcker &amp; läsupplevelser</p>
-      <p class="present-desc">En vacker bok, ett bokprenumeration eller en personlig boklista med favoritrekommendationer.</p>
-    </div>
-    <div class="present-card">
-      <span class="present-emoji">🥂</span>
-      <p class="present-name">Goda smaker</p>
-      <p class="present-desc">En flaska bubbel, en delikatessekorg eller presentkort till en fin restaurang.</p>
-    </div>
-    <div class="present-card">
-      <span class="present-emoji">🌸</span>
-      <p class="present-name">Vackra saker</p>
-      <p class="present-desc">En vacker blomma, kruka, ljuslykta eller något till hemmet i ärtgrönt eller guld.</p>
-    </div>
-    <div class="present-card">
-      <span class="present-emoji">✉️</span>
-      <p class="present-name">Ord &amp; minnen</p>
-      <p class="present-desc">Ett handskrivet brev, ett album med gamla foton eller ett bidrag till ett gemensamt minnesprojekt.</p>
-    </div>
-    <div class="present-card">
-      <span class="present-emoji">🎨</span>
-      <p class="present-name">Hantverk &amp; konst</p>
-      <p class="present-desc">Något handgjort, ett konstverk eller material till silversmide.</p>
-    </div>
+    <div class="present-card"><span class="present-emoji">🌿</span><p class="present-name">En dag för Maja</p><p class="present-desc">Boka en aktivitet hon älskar — spa, konsert, matlagningskurs eller en promenad med picknick.</p></div>
+    <div class="present-card"><span class="present-emoji">📚</span><p class="present-name">Böcker &amp; läsupplevelser</p><p class="present-desc">En vacker bok, ett bokprenumeration eller en personlig boklista med favoritrekommendationer.</p></div>
+    <div class="present-card"><span class="present-emoji">🥂</span><p class="present-name">Goda smaker</p><p class="present-desc">En flaska bubbel, en delikatessekorg eller presentkort till en fin restaurang.</p></div>
+    <div class="present-card"><span class="present-emoji">🌸</span><p class="present-name">Vackra saker</p><p class="present-desc">En vacker blomma, kruka, ljuslykta eller något till hemmet i ärtgrönt eller guld.</p></div>
+    <div class="present-card"><span class="present-emoji">✉️</span><p class="present-name">Ord &amp; minnen</p><p class="present-desc">Ett handskrivet brev, ett album med gamla foton eller ett bidrag till ett gemensamt minnesprojekt.</p></div>
+    <div class="present-card"><span class="present-emoji">🎨</span><p class="present-name">Hantverk &amp; konst</p><p class="present-desc">Något handgjort, ett konstverk eller material till silversmide.</p></div>
   </div>
   <div class="present-note">
     <p class="present-note-text">Det viktigaste är att du är här och firar med oss.<br>Din närvaro är den bästa presenten av alla. 🌿</p>
@@ -298,15 +260,9 @@
 </section>
 
 <!-- BORDSPLACERING — DOLD TILLS VIDARE. Aktivera efter 30 maj:
-     1) Lägg till denna knapp i <nav> ovan:
+     1) Lägg till denna knapp i nav ovan:
         <button class="nav-btn" onclick="show('bord',this)">Bordsplacering</button>
-     2) Ta bort kommentarstaggen runt sektionen nedan
--->
-<!--
-<section class="section" id="bord">
-  ... bordsplaceringen läggs in här efter OSA-datum ...
-</section>
--->
+     2) Ta bort kommentarstaggen runt sektionen nedan -->
 
 <footer>Maja fyller 50 · 13 juni 2026 · Solbacken, Enebachsvägen 18</footer>
 
