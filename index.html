@@ -64,9 +64,15 @@
   .gallery-label { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#C8922A; margin-bottom:10px; margin-top:48px; }
   .gallery-title { font-family:'Playfair Display',serif; font-size:32px; font-style:italic; color:#2C2A22; margin-bottom:24px; }
   .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-  .gallery-grid img { width:100%; aspect-ratio:1; object-fit:cover; border:1px solid #E2D9C4; transition:opacity .25s; }
+  .gallery-grid img { width:100%; aspect-ratio:1; object-fit:cover; border:1px solid #E2D9C4; transition:opacity .25s; cursor:pointer; }
   .gallery-grid img:first-child { grid-column:span 2; aspect-ratio:2/1; }
-  .gallery-grid img:hover { opacity:.9; }
+  .gallery-grid img:hover { opacity:.85; }
+
+  /* LIGHTBOX */
+  .lightbox { display:none; position:fixed; inset:0; background:#0a0806ee; z-index:999; align-items:center; justify-content:center; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:90vw; max-height:90vh; object-fit:contain; border:1px solid #C8922A44; }
+  .lightbox-close { position:absolute; top:20px; right:28px; font-size:32px; color:#c9a84c; cursor:pointer; font-family:sans-serif; line-height:1; }
 
   /* KVÄLLEN */
   .kvall-box { border:1px solid #E2D9C4; padding:36px 32px; background:#fff; margin-bottom:24px; }
@@ -112,6 +118,12 @@
 </style>
 </head>
 <body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="Maja">
+</div>
 
 <div class="citrus-strip"></div>
 
@@ -161,25 +173,31 @@
       <div class="tl-dot"></div>
       <p class="tl-time">Kl. 18.00</p>
       <p class="tl-title">Välkomstdrink</p>
-      <p class="tl-desc">Sommarcocktails i atriumgården</p>
+      <p class="tl-desc">Gästerna anländer och möts av sommarcocktails i atriumgården</p>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:#E8B84B;box-shadow:0 0 0 1px #E8B84B"></div>
       <p class="tl-time">Kl. 19.00</p>
       <p class="tl-title">Buffén öppnar</p>
-      <p class="tl-desc">Sommarbuffé i köket </p>
+      <p class="tl-desc">Sommarbuffén serveras i köket — fyll tallriken och ta plats vid ditt bord</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#7A9E5F;box-shadow:0 0 0 1px #7A9E5F"></div>
+      <p class="tl-time">Under kvällen</p>
+      <p class="tl-title">Tal &amp; skålar</p>
+      <p class="tl-desc">Speaker's corner i atriumgården — alla som vill säga något om Maja är välkomna</p>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:#C8922A;box-shadow:0 0 0 1px #C8922A"></div>
       <p class="tl-time">Hela kvällen</p>
       <p class="tl-title">Polaroidkamera</p>
-      <p class="tl-desc">Fota i fotohörnan i atriumgården</p>
+      <p class="tl-desc">Fota i fotohörnan i atriumgården — ta med ett minne hem</p>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:#7A9E5F;box-shadow:0 0 0 1px #7A9E5F"></div>
       <p class="tl-time">Sent</p>
-      <p class="tl-title">Fest &amp; musik</p>
-      <p class="tl-desc">Kvällen avslutas med musik och dans (?) långt in på natten</p>
+      <p class="tl-title">Dans &amp; musik</p>
+      <p class="tl-desc">Kvällen avslutas med musik och dans långt in på natten</p>
     </div>
   </div>
 
@@ -187,19 +205,24 @@
   <p class="gallery-label" style="margin-top:48px">Maja genom åren</p>
   <p class="gallery-title">Femtio år av ögonblick</p>
   <div class="gallery-grid">
-    <img src="141F7143-841A-45E0-9CC9-6FC5786A28C6.JPG" alt="Maja">
-    <img src="20180326_113248_IMG_2197.JPG" alt="Maja">
-    <img src="6482E75B-D826-4A5F-86EF-2895AEFE25D7.JPG" alt="Maja">
-    <img src="IMG-20240531-WA0003.jpg" alt="Maja">
-    <img src="IMG-20241206-WA0000.jpg" alt="Maja">
-    <img src="IMG-20250218-WA0000.jpg" alt="Maja">
-    <img src="IMG-20250602-WA0000.jpg" alt="Maja">
-    <img src="IMG-20250606-WA0001.jpg" alt="Maja">
-    <img src="IMG-20250607-WA0002.jpg" alt="Maja">
-    <img src="IMG-20250618-WA0002.jpg" alt="Maja">
-    <img src="IMG-20250705-WA0005.jpg" alt="Maja">
-    <img src="IMG-20260123-WA0000.jpg" alt="Maja">
-    <img src="IMG-20260408-WA0001.jpg" alt="Maja">
+    <img src="Midsommar.jpeg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="Jul.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="Halloween.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="Maffia.jpeg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="vandring.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="141F7143-841A-45E0-9CC9-6FC5786A28C6.JPG" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="20180326_113248_IMG_2197.JPG" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="6482E75B-D826-4A5F-86EF-2895AEFE25D7.JPG" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20240531-WA0003.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20241206-WA0000.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20250218-WA0000.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20250602-WA0000.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20250606-WA0001.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20250607-WA0002.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20250618-WA0002.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20250705-WA0005.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20260123-WA0000.jpg" alt="Maja" onclick="openLightbox(this.src)">
+    <img src="IMG-20260408-WA0001.jpg" alt="Maja" onclick="openLightbox(this.src)">
   </div>
 </section>
 
@@ -208,9 +231,7 @@
   <p class="sec-label">Om kvällen</p>
   <h2 class="sec-title">En kväll för Maja</h2>
   <div class="kvall-box">
-    <p class="kvall-placeholder">Ikväll ska vi fira Maja - Majsan, Majosvish, Majan, Maja Gräddnos, Cissi… kärt barn har många namn och hon bär dem alla med stil. Hon fyller 50, och jag har fått vara med i ungefär 20 av de åren — typisch, men vem räknar egentligen.</p>
-    <p class="kvall-placeholder">Har det lilla livet någon ålderskris? Icke! Hon är lika strålande, lika rolig och lika mycket Maja som alltid.</p>
-    <p class="kvall-placeholder">Så ikväll firar vi henne. Kom och hjälp mig hylla denna fantastiska människa vi alla älskar att kalla Maja.</p>
+    <p class="kvall-placeholder">Skriv något personligt om Maja och kvällen här — vem hon är, vad som gör henne speciell, och vad som väntar gästerna under kvällen.</p>
   </div>
   <div class="atrium-box">
     <p class="atrium-title">Atriumgården — kvällens hjärta</p>
@@ -255,11 +276,6 @@
   </div>
 </section>
 
-<!-- BORDSPLACERING — DOLD TILLS VIDARE. Aktivera efter 30 maj:
-     1) Lägg till denna knapp i nav ovan:
-        <button class="nav-btn" onclick="show('bord',this)">Bordsplacering</button>
-     2) Ta bort kommentarstaggen runt sektionen nedan -->
-
 <footer>Maja fyller 50 · 13 juni 2026 · Solbacken, Enebachsvägen 18</footer>
 
 <script>
@@ -270,6 +286,14 @@
     btn.classList.add('active');
     document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
