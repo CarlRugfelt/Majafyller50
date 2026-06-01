@@ -79,6 +79,9 @@
   .present-emoji { font-size:28px; margin-bottom:12px; display:block; }
   .present-name { font-family:'Playfair Display',serif; font-size:19px; font-style:italic; color:#2C2A22; margin-bottom:8px; }
   .present-desc { font-size:14px; color:#7A7668; line-height:1.6; }
+  .present-desc strong { color:#2C2A22; font-weight:500; }
+  .present-shops { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+  .present-shop-tag { font-size:10px; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; background:#F5F0E6; border:1px solid #E2D9C4; color:#7A7668; border-radius:2px; }
   .present-note { background:#EDF3E8; border:1px solid #C0D4AA; padding:28px 32px; text-align:center; }
   .present-note-text { font-family:'Playfair Display',serif; font-style:italic; font-size:18px; color:#5C7848; line-height:1.9; }
 
@@ -144,7 +147,7 @@
   <div class="dress-box">
     <p class="dress-label">Klädkod</p>
     <p class="dress-value">Sommarelegant</p>
-    <p class="dress-sub">Gärna glada sommarfärger </p>
+    <p class="dress-sub">Gärna glada sommarfärger</p>
   </div>
 
   <p class="sec-label">Kvällens upplägg</p>
@@ -159,28 +162,15 @@
       <div class="tl-dot" style="background:#E8B84B;box-shadow:0 0 0 1px #E8B84B"></div>
       <p class="tl-time">Kl. 19.00</p>
       <p class="tl-title">Buffén öppnar</p>
-      <p class="tl-desc">Sommarbuffén i köket </p>
+      <p class="tl-desc">Sommarbuffén i köket</p>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:#7A9E5F;box-shadow:0 0 0 1px #7A9E5F"></div>
       <p class="tl-time">Resten av kvällen</p>
       <p class="tl-title">Fest &amp; musik</p>
-      <p class="tl-desc">Musik, skålar och sällskap — kvällen är vår !</p>
+      <p class="tl-desc">Musik, skålar och sällskap — kvällen är vår!</p>
     </div>
   </div>
-
-  <!-- BILDGALLERI — DOLT TILLS VIDARE
-       Aktivera efter OSA och bordsplacering:
-       Ta bort kommentarstaggarna runt galleriet nedan
-  -->
-  <!--
-  <p class="sec-label" style="margin-top:48px">Maja genom åren</p>
-  <p class="sec-title">Femtio år av ögonblick</p>
-  <div class="gallery-grid">
-    lägg in bilder här
-  </div>
-  -->
-
 </section>
 
 <!-- KVÄLLEN -->
@@ -188,7 +178,7 @@
   <p class="sec-label">Om kvällen</p>
   <h2 class="sec-title">En kväll för Maja</h2>
   <div class="kvall-box">
-    <p class="kvall-text">Ikväll ska vi fira Maja, Majsan, Majosvish, Majan, Maja Gräddnos, Cissi… kärt barn har många namn och hon bär dem alla med stil. Hon fyller 50, och jag har fått vara med i ungefär 20 av de åren — typisch, men vem räknar egentligen. Hon älskar spel & dans, musik, vänner, barn, mat och fest.</p>
+    <p class="kvall-text">Ikväll ska vi fira Maja, Majsan, Majosvish, Majan, Maja Gräddnos, Cissi… kärt barn har många namn och hon bär dem alla med stil. Hon fyller 50, och jag har fått vara med i ungefär 20 av de åren — typisch, men vem räknar egentligen. Hon älskar spel &amp; dans, musik, vänner, barn, mat och fest.</p>
     <p class="kvall-text" style="margin-top:20px">Har hon någon ålderskris? Icke! Hon är lika strålande, lika rolig och lika mycket Maja som alltid.<br>Så ikväll firar vi henne. Kom och hjälp mig hylla denna fantastiska människa. Nu kör vi!</p>
   </div>
   <div class="atrium-box">
@@ -208,13 +198,85 @@
   <h2 class="sec-title">Vad ska man ge den som har allt?</h2>
   <p class="present-intro">Maja behöver egentligen ingenting — men uppskattar allt som kommer från hjärtat. Här är några idéer om du letar efter inspiration, stort som smått.</p>
   <div class="present-grid">
-    <div class="present-card"><span class="present-emoji">🌿</span><p class="present-name">En dag för Maja</p><p class="present-desc">Boka en aktivitet hon älskar — spa, konsert, matlagningskurs eller en promenad med picknick.</p></div>
-   <div class="present-card"><span class="present-emoji">🌿</span><p class="present-name">Saker och ting</p><p class="present-desc">Majas Önskelista: Inredning och trädgård — 1) Monami serien; kaffekopp saknas i samlingen, tekoppen finns. 2) Pussel: Wasgij, pussla inte vad du ser utan vad de ser/ vad som händer.</p></div> 
-   <div class="present-card"><span class="present-emoji">📚</span><p class="present-name">Böcker &amp; läsupplevelser</p><p class="present-desc">En vacker bok, ett bokprenumeration eller en personlig boklista med favoritrekommendationer.</p></div>
-    <div class="present-card"><span class="present-emoji">🥂</span><p class="present-name">Goda smaker</p><p class="present-desc">En flaska bubbel, en delikatessekorg eller presentkort till en fin restaurang.</p></div>
-    <div class="present-card"><span class="present-emoji">🌸</span><p class="present-name">Vackra saker</p><p class="present-desc">En vacker blomma, kruka, ljuslykta eller något till hemmet i ärtgrönt eller guld.</p></div>
-    <div class="present-card"><span class="present-emoji">✉️</span><p class="present-name">Ord &amp; minnen</p><p class="present-desc">Ett handskrivet brev, ett album med gamla foton eller ett bidrag till ett gemensamt minnesprojekt.</p></div>
-    <div class="present-card"><span class="present-emoji">🎨</span><p class="present-name">Hantverk &amp; konst</p><p class="present-desc">Något handgjort, ett konstverk eller material till silversmide.</p></div>
+
+    <div class="present-card">
+      <span class="present-emoji">🌿</span>
+      <p class="present-name">En dag för Maja</p>
+      <p class="present-desc">Boka en aktivitet hon älskar — spa, konsert, matlagningskurs eller en promenad med picknick.</p>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">🏡</span>
+      <p class="present-name">Hem &amp; inredning</p>
+      <p class="present-desc"><strong>Önskelista:</strong><br>① Monami-serien — kaffekopp saknas (tekoppen finns)<br>② Wasgij-pussel — pussla vad de ser, inte vad du ser<br><br><strong>Hitta det hos:</strong></p>
+      <div class="present-shops">
+        <span class="present-shop-tag">Cervera</span>
+        <span class="present-shop-tag">Designtorget</span>
+        <span class="present-shop-tag">Granit</span>
+        <span class="present-shop-tag">Illums Bolighus</span>
+      </div>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">🌱</span>
+      <p class="present-name">Trädgård &amp; utemiljö</p>
+      <p class="present-desc">En vacker kruka, ljuslykta eller blomma — gärna i ärtgrönt eller guld.<br><br><strong>Hitta det hos:</strong></p>
+      <div class="present-shops">
+        <span class="present-shop-tag">Plantagen</span>
+        <span class="present-shop-tag">Granit</span>
+        <span class="present-shop-tag">Cervera</span>
+      </div>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">🎲</span>
+      <p class="present-name">Spel &amp; pussel</p>
+      <p class="present-desc">Maja älskar spel! Wasgij-pussel är ett säkert kort — eller ett roligt sällskapsspel för hela gänget.<br><br><strong>Hitta det hos:</strong></p>
+      <div class="present-shops">
+        <span class="present-shop-tag">Webhallen</span>
+        <span class="present-shop-tag">Spilbrädet</span>
+        <span class="present-shop-tag">CDON</span>
+      </div>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">👗</span>
+      <p class="present-name">Mode &amp; stil</p>
+      <p class="present-desc">Maja uppskattar väldesignade kläder och skor med personlighet och känsla.<br><br><strong>Presentkort hos:</strong></p>
+      <div class="present-shops">
+        <span class="present-shop-tag">Pure Female</span>
+        <span class="present-shop-tag">The Shoe Bakery</span>
+      </div>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">📚</span>
+      <p class="present-name">Böcker &amp; läsupplevelser</p>
+      <p class="present-desc">En vacker bok, en bokprenumeration eller en personlig boklista med favoritrekommendationer.</p>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">🥂</span>
+      <p class="present-name">Goda smaker</p>
+      <p class="present-desc">En flaska bubbel, en delikatessekorg eller presentkort till en fin restaurang.</p>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">✉️</span>
+      <p class="present-name">Ord &amp; minnen</p>
+      <p class="present-desc">Ett handskrivet brev, ett album med gamla foton eller ett bidrag till ett gemensamt minnesprojekt.</p>
+    </div>
+
+    <div class="present-card">
+      <span class="present-emoji">🎨</span>
+      <p class="present-name">Hantverk &amp; konst</p>
+      <p class="present-desc">Något handgjort, ett konstverk eller material till silversmide.<br><br><strong>Hitta det hos:</strong></p>
+      <div class="present-shops">
+        <span class="present-shop-tag">Panduro</span>
+        <span class="present-shop-tag">Slöjd-Detaljer</span>
+      </div>
+    </div>
+
   </div>
   <div class="present-note">
     <p class="present-note-text">Det viktigaste är att du är här och firar med oss.<br>Din närvaro är den bästa presenten av alla. 🌿</p>
@@ -234,12 +296,6 @@
     <p class="osa-note">Meddela eventuella allergier eller dietbehov.<br>Ange även om hur många som kommer (alla åldrar är välkomna).</p>
   </div>
 </section>
-
-<!-- BORDSPLACERING — DOLD TILLS VIDARE
-     Aktivera efter 30 maj:
-     1) Lägg till i nav: <button class="nav-btn" onclick="show('bord',this)">Bordsplacering</button>
-     2) Ta bort kommentarstaggen runt sektionen nedan
--->
 
 <footer>Maja fyller 50 · 13 juni 2026 · Solbacken, Enebacksvägen 18</footer>
 
