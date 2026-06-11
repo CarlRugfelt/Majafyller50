@@ -62,12 +62,9 @@
 
   /* GALLERI */
   .gallery-section { margin-top:56px; }
-  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:24px; }
-  .gallery-grid .wide { grid-column:span 2; }
-  .gallery-grid .tall { grid-row:span 2; }
-  .gallery-grid a { display:block; overflow:hidden; background:#EDF3E8; }
-  .gallery-grid a img { width:100%; height:100%; object-fit:cover; aspect-ratio:1; display:block; transition:transform .4s ease,opacity .3s; }
-  .gallery-grid .wide a img { aspect-ratio:2/1; }
+  .gallery-grid { columns:3; column-gap:8px; margin-top:24px; }
+  .gallery-grid a { display:block; margin-bottom:8px; overflow:hidden; background:#EDF3E8; break-inside:avoid; cursor:pointer; }
+  .gallery-grid a img { width:100%; display:block; transition:transform .4s ease, opacity .3s; }
   .gallery-grid a:hover img { transform:scale(1.04); opacity:.9; }
 
   /* LIGHTBOX */
@@ -120,8 +117,7 @@
     .osa-wrap { padding:30px 18px; }
     .nav-btn { padding:12px 10px; font-size:10px; letter-spacing:2px; }
     .kvall-box { padding:24px 18px; }
-    .gallery-grid { grid-template-columns:repeat(2,1fr); }
-    .gallery-grid .wide { grid-column:span 2; }
+    .gallery-grid { columns:2; }
   }
 </style>
 </head>
@@ -194,31 +190,8 @@
   <!-- BILDGALLERI -->
   <div class="gallery-section">
     <p class="sec-label">Femtio år av ögonblick</p>
-    <h3 style="font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:#2C2A22;font-weight:400;">Maja genom åren</h3>
-    <div class="gallery-grid" id="gallery">
-      <div class="wide"><a href="#" onclick="openLb(0);return false;"><img src="IMG-20240531-WA0003.jpg" alt="Maja"></a></div>
-      <a href="#" onclick="openLb(1);return false;"><img src="20241213_163602.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(2);return false;"><img src="20241213_172736.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(3);return false;"><img src="IMG-20241120-WA0000.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(4);return false;"><img src="IMG-20250218-WA0000.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(5);return false;"><img src="20260405_144800.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(6);return false;"><img src="20260514_204318.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(7);return false;"><img src="20260519_191643.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(8);return false;"><img src="IMG-20250602-WA0000.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(9);return false;"><img src="IMG-20250607-WA0002.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(10);return false;"><img src="IMG-20250618-WA0002.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(11);return false;"><img src="IMG-20250705-WA0005.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(12);return false;"><img src="IMG-20260123-WA0000.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(13);return false;"><img src="IMG-20260424-WA0000.jpg" alt="Maja"></a>
-      <a href="#" onclick="openLb(14);return false;"><img src="WhatsApp Image 2026-06-08 at 15.28.43 (1).jp..." alt="Maja"></a>
-      <a href="#" onclick="openLb(15);return false;"><img src="WhatsApp Image 2026-06-08 at 15.28.43.jpeg" alt="Maja"></a>
-      <a href="#" onclick="openLb(16);return false;"><img src="WhatsApp Image 2026-06-08 at 15.28.44 (1).jp..." alt="Maja"></a>
-      <a href="#" onclick="openLb(17);return false;"><img src="WhatsApp Image 2026-06-08 at 15.28.44.jpeg" alt="Maja"></a>
-      <a href="#" onclick="openLb(18);return false;"><img src="6482E75B-D826-4A5F-86EF-2895AEFE25D7.JPG" alt="Maja"></a>
-      <a href="#" onclick="openLb(19);return false;"><img src="141F7143-841A-45E0-9CC9-6FC5786A28C6.JPG" alt="Maja"></a>
-      <a href="#" onclick="openLb(20);return false;"><img src="E071B5B5-1C26-40B0-BB00-DB33E55F9DDE.P..." alt="Maja"></a>
-      <a href="#" onclick="openLb(21);return false;"><img src="20210310_180537_b3ca2a98-801d-4077-bbee-...." alt="Maja"></a>
-    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:28px;font-style:italic;color:#2C2A22;font-weight:400;margin-bottom:0;">Maja genom åren</h3>
+    <div class="gallery-grid" id="gallery"></div>
   </div>
 </section>
 
@@ -287,35 +260,59 @@
 
 <script>
   const imgs = [
-    "IMG-20240531-WA0003.jpg",
+    "1000011355.jpg",
+    "1000011356.jpg",
+    "1000011357.jpg",
+    "1000011358.jpg",
+    "1000011360.jpg",
+    "1000011361.jpg",
+    "1000011362.jpg",
+    "1000011363.jpg",
+    "1000011364.jpg",
+    "Maja studien.jpeg",
+    "Majastol.jpeg",
+    "Majamadpannband.jpeg",
+    "Majaokompis.jpeg",
+    "Rsbergsmaja.jpeg",
+    "majalite.jpg",
+    "vandring.jpg",
     "20241213_163602.jpg",
     "20241213_172736.jpg",
-    "IMG-20241120-WA0000.jpg",
-    "IMG-20250218-WA0000.jpg",
     "20260405_144800.jpg",
     "20260514_204318.jpg",
     "20260519_191643.jpg",
+    "IMG-20240531-WA0003.jpg",
+    "IMG-20241120-WA0000.jpg",
+    "IMG-20250218-WA0000.jpg",
     "IMG-20250602-WA0000.jpg",
     "IMG-20250607-WA0002.jpg",
     "IMG-20250618-WA0002.jpg",
     "IMG-20250705-WA0005.jpg",
     "IMG-20260123-WA0000.jpg",
     "IMG-20260424-WA0000.jpg",
-    "WhatsApp Image 2026-06-08 at 15.28.43 (1).jpeg",
-    "WhatsApp Image 2026-06-08 at 15.28.43.jpeg",
-    "WhatsApp Image 2026-06-08 at 15.28.44 (1).jpeg",
-    "WhatsApp Image 2026-06-08 at 15.28.44.jpeg",
-    "6482E75B-D826-4A5F-86EF-2895AEFE25D7.JPG",
-    "141F7143-841A-45E0-9CC9-6FC5786A28C6.JPG",
-    "E071B5B5-1C26-40B0-BB00-DB33E55F9DDE.PNG",
-    "20210310_180537_b3ca2a98-801d-4077-bbee-b3ca2a98801d.jpg"
   ];
+
   let cur = 0;
+
+  function buildGallery() {
+    const grid = document.getElementById('gallery');
+    imgs.forEach((src, i) => {
+      const a = document.createElement('a');
+      a.href = '#';
+      a.onclick = (e) => { e.preventDefault(); openLb(i); };
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Maja';
+      img.onerror = function() { this.closest('a').style.display = 'none'; };
+      a.appendChild(img);
+      grid.appendChild(a);
+    });
+  }
 
   function openLb(i) {
     cur = i;
     document.getElementById('lb-img').src = imgs[i];
-    document.getElementById('lb-cap').textContent = (i+1) + ' / ' + imgs.length;
+    document.getElementById('lb-cap').textContent = (i + 1) + ' / ' + imgs.length;
     document.getElementById('lb').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -326,7 +323,7 @@
   function stepLb(dir) {
     cur = (cur + dir + imgs.length) % imgs.length;
     document.getElementById('lb-img').src = imgs[cur];
-    document.getElementById('lb-cap').textContent = (cur+1) + ' / ' + imgs.length;
+    document.getElementById('lb-cap').textContent = (cur + 1) + ' / ' + imgs.length;
   }
   document.addEventListener('keydown', e => {
     if (!document.getElementById('lb').classList.contains('open')) return;
@@ -342,6 +339,8 @@
     btn.classList.add('active');
     document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  buildGallery();
 </script>
 </body>
 </html>
